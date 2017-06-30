@@ -253,7 +253,7 @@ class multicolour extends Map {
   start() {
     // Check we've scanned for content and blueprints.
     if (!this.get("has_scanned"))
-      return Promise.reject("Refusing to start services as you have not .scan()ed for content/blueprints.")
+      this.scan()
 
     // Create the validations.
     this.use(require("./lib/validator"))
@@ -267,12 +267,14 @@ class multicolour extends Map {
     require("https").globalAgent.maxSockets = Infinity
 
     /* eslint-disable */
+    /* istanbul ignore next: Untestable */
     process.on("SIGINT", () => {
       console.log("All services going away. CLI will be handed back immediately but services may continue to shut down in background.")
       this.stop()
     })
     /* eslint-enable */
 
+    /* istanbul ignore next: Untestable */
     const report_error = err => {
       this.debug("There was an error while starting some or all of the service(s) and plugins. The error was", err)
       this.stop().then(() => process.exit(1))
@@ -302,11 +304,15 @@ class multicolour extends Map {
         console.log("All services stopped successfully.")
         /* eslint-disable */
       })
+      // Annoyingly have to ignore both expressions here
+      // since we can't ignore the block.
       .catch(err => {
         /* eslint-disable */
+        /* istanbul ignore next: Untestable */
         console.error("There was an error while trying to stop some or all of the services/plugins. The process will exit forcefully now but the error is:")
         /* eslint-enable */
 
+        /* istanbul ignore next: Untestable */
         throw err
       })
   }

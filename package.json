@@ -18,7 +18,6 @@
   "scripts": {
     "linter": "eslint ./**/*.js",
     "unit-tests": "tape tests/all.js | tap-spec",
-    "integration-tests": "newman run tests/integration/postman_collection.json",
     "test": "npm run linter && npm run unit-tests",
     "test-coverage": "istanbul cover tape tests/*.js --recursive --report lcov -x '**/cli/**' -x '**/waterline-fixes/**' | tap-spec",
     "changelog": "github_changelog_generator -u Multicolour -p multicolour"
@@ -59,6 +58,7 @@
   },
   "devDependencies": {
     "async": "^1.5.2",
+    "blue-tape": "^1.0.0",
     "eslint": "^4.1.1",
     "istanbul": "^0.4.5",
     "newman": "^3.7.3",

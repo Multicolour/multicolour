@@ -12,6 +12,10 @@ module.exports = {
         description: "The name is a short string that colloqually identifies a thing from other things."
       }
     },
+    test: {
+      type: "string",
+      defaultsTo: "multicolour"
+    },
     age: {
       required: true,
       type: "integer",

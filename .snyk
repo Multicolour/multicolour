@@ -1,9 +1,13 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.7.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:concat-stream:20160901':
     - waterline > anchor > @mapbox/geojsonhint > concat-stream:
-        reason: None given
-        expires: '2017-04-09T11:32:55.838Z'
+        reason: No patch or update available.
+        expires: '2017-07-30T12:25:41.379Z'
+  'npm:shelljs:20140723':
+    - eslint > shelljs:
+        reason: No patch or update available
+        expires: '2017-07-30T12:25:41.379Z'
 patch: {}

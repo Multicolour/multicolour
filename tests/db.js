@@ -58,7 +58,7 @@ tape("Waterline collections are created by Multicolour on instantiation and we o
     .then(ontology => {
       const models = ontology.collections
 
-      const valid_model = {name: "Multicolour", age: 100}
+      const valid_model = {name: "Multicolour", age: 100, test: "multicolour"}
       const invalid_model = {age: 100}
 
       test.deepEqual(models.test.is_valid(valid_model).value, valid_model, "is_valid class member validates valid object")

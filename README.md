@@ -20,3 +20,6 @@ Get news from [Twitter](https://twitter.com/getmulticolour)
 
 MIT license  
 [Code of Conduct](https://github.com/Multicolour/multicolour/blob/master/CODE_OF_CONDUCT.md)
+
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Multicolour/multicolour.svg)](https://greenkeeper.io/)

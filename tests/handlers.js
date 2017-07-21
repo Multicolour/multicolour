@@ -22,7 +22,8 @@ tape("Handlers", test => {
     DB.start()
   ])
   .then(() => {
-    const model = DB.get("models").test
+    const models = DB.get("models")
+    const model = models.test
     const handlers = multicolour.get("handlers")
 
     const constraints = {user: "payload.user"}
@@ -44,6 +45,32 @@ tape("Handlers", test => {
         test.equal(created.length, 1, "Returned 1 created document")
         next()
       }),
+      next => handlers.POST(model, {
+        payload: {
+          name: "test",
+          age: 20,
+          test: "multicolour"
+        },
+        params: {},
+        url
+      }, (err, created) => {
+        test.equal(err, null, "No error in POST handler.")
+        test.equal(created.length, 1, "Returned 1 created test document")
+        next()
+      }),
+      next => handlers.POST(models.test2, {
+        payload: {
+          name: "test",
+          age: 20,
+          test: 2
+        },
+        params: {},
+        url
+      }, (err, created) => {
+        test.equal(err, null, "No error in POST handler with relationship.")
+        test.equal(created.length, 1, "Returned 1 created test2 document")
+        next()
+      }),
       next => handlers.GET(model, {params: {}, url}, (err, rows) => {
         test.equal(err, null, "No error in empty GET handler")
         test.equal(rows.length, 1, "Returned 1 document")
@@ -57,6 +84,17 @@ tape("Handlers", test => {
       next => handlers.GET(model, {params: {id: 999}, url}, err => {
         test.ok(err, "Expected error in GET handler with bad id.")
         test.equal(err.code, 404, "Returned a 404")
+        next()
+      }),
+      next => handlers.GET(models.test2, {params: {}, url: {
+        query: {
+          sortBy: "id:ASC",
+          test: {
+            test: "multicolour"
+          }
+        }
+      }}, (err, rows) => {
+        test.ok(rows.length > 0, "Got results for a relationship query.")
         next()
       }),
       next => handlers.PATCH(model, {payload, params: {id: 1}, url}, err => {

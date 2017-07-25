@@ -1,21 +1,35 @@
 # Change Log
 
-## [0.6.4](https://github.com/Multicolour/multicolour/tree/0.6.4) (2017-03-20)
-[Full Changelog](https://github.com/Multicolour/multicolour/compare/0.4.2...0.6.4)
+## [0.6.11](https://github.com/Multicolour/multicolour/tree/0.6.11) (2017-07-25)
+[Full Changelog](https://github.com/Multicolour/multicolour/compare/0.4.2...0.6.11)
 
 **Implemented enhancements:**
 
+- Don't error/exit when a waterline "fix" fails. [\#278](https://github.com/Multicolour/multicolour/issues/278)
+- Make error message when trying to relate to unknown model better  [\#272](https://github.com/Multicolour/multicolour/issues/272)
+- Add option to disable sequence fix on start [\#269](https://github.com/Multicolour/multicolour/issues/269)
+- Add flag to init command to skip npm install [\#252](https://github.com/Multicolour/multicolour/issues/252)
+- Make the JWT option in init clearer [\#243](https://github.com/Multicolour/multicolour/issues/243)
+- Remove requirement to .scan [\#239](https://github.com/Multicolour/multicolour/issues/239)
+- CLI :: Ask for database auth details and OAuth/JWT config during init [\#235](https://github.com/Multicolour/multicolour/issues/235)
+- Don't assume production, instead assume development [\#230](https://github.com/Multicolour/multicolour/issues/230)
+- Waterline doesn't automatically create the database [\#229](https://github.com/Multicolour/multicolour/issues/229)
+- Improve error reporting in config during start up [\#226](https://github.com/Multicolour/multicolour/issues/226)
+- CLI and the American Spelling of Color [\#207](https://github.com/Multicolour/multicolour/issues/207)
 - Ask for default user config if auth selected in CLI init [\#204](https://github.com/Multicolour/multicolour/issues/204)
 - DELETE should return the deleted entities. [\#187](https://github.com/Multicolour/multicolour/issues/187)
 - Bad error message [\#175](https://github.com/Multicolour/multicolour/issues/175)
+- Add newman for automatic integration testing [\#174](https://github.com/Multicolour/multicolour/issues/174)
 - Improve init content [\#173](https://github.com/Multicolour/multicolour/issues/173)
 - Better error messages when Waterline throws validation error. [\#169](https://github.com/Multicolour/multicolour/issues/169)
+- Tidy up tests and update the readme [\#166](https://github.com/Multicolour/multicolour/issues/166)
 - Support association query filters [\#165](https://github.com/Multicolour/multicolour/issues/165)
 - Show error message when project name is invalid [\#160](https://github.com/Multicolour/multicolour/issues/160)
 - Add default sorting to endpoints. [\#153](https://github.com/Multicolour/multicolour/issues/153)
 - Add metadata to model definitions [\#129](https://github.com/Multicolour/multicolour/issues/129)
 - Move waterline-joi schema creation to model generation [\#117](https://github.com/Multicolour/multicolour/issues/117)
 - Replace sha1 password hashing in initialisation template [\#115](https://github.com/Multicolour/multicolour/issues/115)
+- Make CLI extendable. [\#113](https://github.com/Multicolour/multicolour/issues/113)
 - Improve and update documentation [\#111](https://github.com/Multicolour/multicolour/issues/111)
 - Fix bad verbiage, it's an interrupt signal- not a kill signal [\#109](https://github.com/Multicolour/multicolour/issues/109)
 - Don't include the core user model for no reason. [\#108](https://github.com/Multicolour/multicolour/issues/108)
@@ -27,6 +41,7 @@
 - Extend automatic relationship detection to foreign key configurations [\#44](https://github.com/Multicolour/multicolour/issues/44)
 - Optimise PUT handler [\#37](https://github.com/Multicolour/multicolour/issues/37)
 - Create basic theme for front-end. [\#16](https://github.com/Multicolour/multicolour/issues/16)
+- Rename JWT auth provider to 'Email/Password \(JWT\)' [\#273](https://github.com/Multicolour/multicolour/pull/273) ([molovo](https://github.com/molovo))
 - Feature/joi validator in schema [\#125](https://github.com/Multicolour/multicolour/pull/125) ([davemackintosh](https://github.com/davemackintosh))
 - Add a method to the model to validate input using joi [\#124](https://github.com/Multicolour/multicolour/pull/124) ([davemackintosh](https://github.com/davemackintosh))
 - Feature/package json startup [\#123](https://github.com/Multicolour/multicolour/pull/123) ([davemackintosh](https://github.com/davemackintosh))
@@ -35,8 +50,19 @@
 
 **Fixed bugs:**
 
+- Error while creating database when project is hyphenated. [\#281](https://github.com/Multicolour/multicolour/issues/281)
+- Error while creating database that already exists with MySQL adapter [\#280](https://github.com/Multicolour/multicolour/issues/280)
+- createdAt / updatedAt hard coded to validate as strings [\#271](https://github.com/Multicolour/multicolour/issues/271)
+- Endpoint rawify doesn't include all defined properties. [\#270](https://github.com/Multicolour/multicolour/issues/270)
+- Init fails with heiphenated project names [\#264](https://github.com/Multicolour/multicolour/issues/264)
+- If any service fails to start, it blocks cli and have to core dump exit. [\#240](https://github.com/Multicolour/multicolour/issues/240)
+- postgres fixes need to escape table/column names [\#238](https://github.com/Multicolour/multicolour/issues/238)
+- CLI :: Ask for database auth details and OAuth/JWT config during init [\#235](https://github.com/Multicolour/multicolour/issues/235)
+- Error: Cannot find module 'waterline-sqlite3' [\#223](https://github.com/Multicolour/multicolour/issues/223)
+- Selecting certain auth options in the init CLI always installs JWT [\#208](https://github.com/Multicolour/multicolour/issues/208)
 - DELETE on non-existent document 500s [\#186](https://github.com/Multicolour/multicolour/issues/186)
 - Update endpoints need to make all keys optional [\#185](https://github.com/Multicolour/multicolour/issues/185)
+- SQLite 3 adapter needs prepublish running [\#176](https://github.com/Multicolour/multicolour/issues/176)
 - JWT plugin added when no auth chosen in init command [\#172](https://github.com/Multicolour/multicolour/issues/172)
 - Auth object always has password in it after init with no auth plugin chosen [\#171](https://github.com/Multicolour/multicolour/issues/171)
 - Fix Content Header in Swagger. [\#170](https://github.com/Multicolour/multicolour/issues/170)
@@ -58,6 +84,7 @@
 
 **Closed issues:**
 
+- Action required: Greenkeeper could not be activated 🚨 [\#267](https://github.com/Multicolour/multicolour/issues/267)
 - Breaking change :: Switch start and stop routines to promises [\#148](https://github.com/Multicolour/multicolour/issues/148)
 - add 'next' and 'back' buttons for use when viewing the Examples section [\#141](https://github.com/Multicolour/multicolour/issues/141)
 - node environment requires setting to 'development' & app.js no longer generated [\#140](https://github.com/Multicolour/multicolour/issues/140)
@@ -65,6 +92,8 @@
 
 **Merged pull requests:**
 
+- Rollback async dependency due to conflict with waterline [\#274](https://github.com/Multicolour/multicolour/pull/274) ([molovo](https://github.com/molovo))
+- Update dependencies to enable Greenkeeper 🌴 [\#268](https://github.com/Multicolour/multicolour/pull/268) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Feature/model metadata [\#132](https://github.com/Multicolour/multicolour/pull/132) ([davemackintosh](https://github.com/davemackintosh))
 - Feature/write ops [\#128](https://github.com/Multicolour/multicolour/pull/128) ([davemackintosh](https://github.com/davemackintosh))
 - Update tape to version 4.6.3 🚀 [\#121](https://github.com/Multicolour/multicolour/pull/121) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))

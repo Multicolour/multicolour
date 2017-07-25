@@ -32,12 +32,42 @@ class Endpoint {
     this.FE_GET = false
     this.FE_PATCH = false
     this.FE_DELETE = false
+    /* eslint-disable */
+
+    this.builtins = new Set([
+      "constructor",
+      "$_endpoint_class",
+      "builtins",
+      "POST",
+      "GET",
+      "PATCH",
+      "PUT",
+      "DELETE",
+      "FE_POST",
+      "FE_GET",
+      "FE_PATCH",
+      "FE_DELETE",
+      "rawify",
+      "add_create_route",
+      "add_read_route",
+      "add_update_route",
+      "add_update_or_create_route",
+      "add_delete_route",
+      "add_create_frontend",
+      "add_read_frontend",
+      "add_update_frontend",
+      "add_delete_frontend"
+    ])
 
     return this
   }
 
   rawify() {
-    return this
+    const as_json = Object.assign({}, this)
+
+    this.builtins.forEach(builtin => delete as_json[builtin])
+
+    return as_json
   }
 
   add_create_route() {

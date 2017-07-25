@@ -9,6 +9,11 @@ const Multicolour = require("../index")
 tape("Endpoint library", test => {
 
   const endpoint = new Multicolour.Endpoint({test: "string"})
+
+  endpoint.some_function = () => 1
+  endpoint.some_value = 2
+
+  endpoint
     .add_create_route()
     .add_read_route()
     .add_update_route()
@@ -31,6 +36,13 @@ tape("Endpoint library", test => {
   test.equals(endpoint.FE_GET, true, "Read route function worked")
   test.equals(endpoint.FE_PATCH, true, "Update route function worked")
   test.equals(endpoint.FE_DELETE, true, "Delete route function worked")
+
+  let as_json
+
+  test.doesNotThrow(() => as_json = endpoint.rawify(), "Doesn't throw while getting JSON value.")
+
+  test.ok(as_json.some_function && as_json.some_value, "Rawified Endpoint contains assigned statics.")
+  test.equals(as_json.some_function(), 1, "Assigned static function is called without error and returns value.")
 
   test.end()
 })

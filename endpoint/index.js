@@ -1,6 +1,46 @@
 "use strict"
 
+const endpoint_builtins = new Set([
+  "constructor",
+  "$_endpoint_class",
+  "builtins",
+  "POST",
+  "GET",
+  "PATCH",
+  "PUT",
+  "DELETE",
+  "FE_POST",
+  "FE_GET",
+  "FE_PATCH",
+  "FE_DELETE",
+  "rawify",
+  "add_create_route",
+  "add_read_route",
+  "add_update_route",
+  "add_update_or_create_route",
+  "add_delete_route",
+  "add_create_frontend",
+  "add_read_frontend",
+  "add_update_frontend",
+  "add_delete_frontend"
+])
+
+/**
+* The difference between using Endpoint
+* and just specifying the JSON is the JSON
+* implicitely generates all the things and
+* the Endpoint class explicitely generates
+* only what you tell it to. Everything = false by default.
+*/
 class Endpoint {
+  /**
+   * Create a model where none of the endpoints
+   * are created by default and must be explicitely
+   * added in the definition.
+   *
+   * @param {Object} blueprint to define this model.
+   * @return {void}
+   */
   constructor(blueprint) {
     // Check we got the basics we need.
     if (!blueprint || Object.keys(blueprint).length === 0) {
@@ -12,13 +52,7 @@ class Endpoint {
     this.$_endpoint_class = true
 
     // Add the blueprint to this endpoint.
-    this.attributes = blueprint
-
-    // The difference between using Endpoint
-    // and just specifying the JSON is the JSON
-    // implicitely generates all the things and
-    // the Endpoint class explicitely generates
-    // only what you tell it to. Everything = false by default.
+    this.attributes = Object.assign({}, blueprint)
 
     // API.
     this.POST = false
@@ -32,40 +66,18 @@ class Endpoint {
     this.FE_GET = false
     this.FE_PATCH = false
     this.FE_DELETE = false
-    /* eslint-disable */
-
-    this.builtins = new Set([
-      "constructor",
-      "$_endpoint_class",
-      "builtins",
-      "POST",
-      "GET",
-      "PATCH",
-      "PUT",
-      "DELETE",
-      "FE_POST",
-      "FE_GET",
-      "FE_PATCH",
-      "FE_DELETE",
-      "rawify",
-      "add_create_route",
-      "add_read_route",
-      "add_update_route",
-      "add_update_or_create_route",
-      "add_delete_route",
-      "add_create_frontend",
-      "add_read_frontend",
-      "add_update_frontend",
-      "add_delete_frontend"
-    ])
-
-    return this
   }
 
+  /**
+   * Get a raw version of this Endpoint
+   * so it has a similar structure to a
+   * standard JSON model definition.
+   * @return {Object} JSON-ified representation of this Endpoint.
+   */
   rawify() {
     const as_json = Object.assign({}, this)
 
-    this.builtins.forEach(builtin => delete as_json[builtin])
+    endpoint_builtins.forEach(builtin => delete as_json[builtin])
 
     return as_json
   }

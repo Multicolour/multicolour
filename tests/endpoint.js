@@ -43,6 +43,7 @@ tape("Endpoint library", test => {
 
   test.ok(as_json.some_function && as_json.some_value, "Rawified Endpoint contains assigned statics.")
   test.equals(as_json.some_function(), 1, "Assigned static function is called without error and returns value.")
+  test.equals(as_json.some_value, 2, "Assigned static value is correct.")
 
   test.end()
 })

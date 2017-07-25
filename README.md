@@ -1,6 +1,6 @@
 <img src="https://getmulticolour.com/images/MC_Icon_PurpleRain_Logotype.png" width="350">
 
-[![Join the chat at https://gitter.im/newworldcode/multicolour](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/newworldcode/multicolour?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://slack.getmulticolour.com](https://slack.getmulticolour.com/badge.svg)
 [![Build Status](https://travis-ci.org/Multicolour/multicolour.svg?branch=master)](https://travis-ci.org/Multicolour/multicolour)
 [![Coverage Status](https://coveralls.io/repos/Multicolour/multicolour/badge.svg?branch=master&service=github)](https://coveralls.io/github/Multicolour/multicolour?branch=master)
 [![Code Climate](https://codeclimate.com/github/newworldcode/multicolour/badges/gpa.svg)](https://codeclimate.com/github/newworldcode/multicolour)

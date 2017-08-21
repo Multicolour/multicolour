@@ -12,8 +12,8 @@ const test_content_path = "./tests/test_content/"
 
 tape("Default disk storage adapter.", test => {
   const multicolour = Multicolour
-      .new_from_config_file_path(`${test_content_path}config.js`)
-      .scan()
+    .new_from_config_file_path(`${test_content_path}config.js`)
+    .scan()
 
   test.doesNotThrow(() => multicolour.use(storage), "Registering default storage adapter does not throw error.")
   test.ok(multicolour.request("storage"), "Storage is set after registering storage plugin.")

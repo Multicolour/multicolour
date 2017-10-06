@@ -266,6 +266,10 @@ class multicolour extends Map {
     require("http").globalAgent.maxSockets =
     require("https").globalAgent.maxSockets = Infinity
 
+    process.on("unhandledRejection", err => {
+      throw err
+    })
+
     /* eslint-disable */
     /* istanbul ignore next: Untestable */
     process.on("SIGINT", () => {

@@ -1,10 +1,14 @@
 # Change Log
 
-## [0.6.11](https://github.com/Multicolour/multicolour/tree/0.6.11) (2017-07-25)
-[Full Changelog](https://github.com/Multicolour/multicolour/compare/0.4.2...0.6.11)
+## [0.6.14](https://github.com/Multicolour/multicolour/tree/0.6.14) (2017-10-10)
+[Full Changelog](https://github.com/Multicolour/multicolour/compare/0.4.2...0.6.14)
 
 **Implemented enhancements:**
 
+- Add ability to specify example value for Docs [\#293](https://github.com/Multicolour/multicolour/issues/293)
+- Handle unhandledRejection [\#288](https://github.com/Multicolour/multicolour/issues/288)
+- Support using environmentals in the init command [\#287](https://github.com/Multicolour/multicolour/issues/287)
+- Default Accept to application/json [\#282](https://github.com/Multicolour/multicolour/issues/282)
 - Don't error/exit when a waterline "fix" fails. [\#278](https://github.com/Multicolour/multicolour/issues/278)
 - Make error message when trying to relate to unknown model better  [\#272](https://github.com/Multicolour/multicolour/issues/272)
 - Add option to disable sequence fix on start [\#269](https://github.com/Multicolour/multicolour/issues/269)
@@ -15,6 +19,7 @@
 - Don't assume production, instead assume development [\#230](https://github.com/Multicolour/multicolour/issues/230)
 - Waterline doesn't automatically create the database [\#229](https://github.com/Multicolour/multicolour/issues/229)
 - Improve error reporting in config during start up [\#226](https://github.com/Multicolour/multicolour/issues/226)
+- Default user plugin :: password should be stored in database, not in plugin [\#224](https://github.com/Multicolour/multicolour/issues/224)
 - CLI and the American Spelling of Color [\#207](https://github.com/Multicolour/multicolour/issues/207)
 - Ask for default user config if auth selected in CLI init [\#204](https://github.com/Multicolour/multicolour/issues/204)
 - DELETE should return the deleted entities. [\#187](https://github.com/Multicolour/multicolour/issues/187)
@@ -50,6 +55,7 @@
 
 **Fixed bugs:**
 
+- id appears in writable schema [\#292](https://github.com/Multicolour/multicolour/issues/292)
 - Error while creating database when project is hyphenated. [\#281](https://github.com/Multicolour/multicolour/issues/281)
 - Error while creating database that already exists with MySQL adapter [\#280](https://github.com/Multicolour/multicolour/issues/280)
 - createdAt / updatedAt hard coded to validate as strings [\#271](https://github.com/Multicolour/multicolour/issues/271)
@@ -92,6 +98,8 @@
 
 **Merged pull requests:**
 
+- Update pluralize to the latest version 🚀 [\#286](https://github.com/Multicolour/multicolour/pull/286) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update debug to the latest version 🚀 [\#284](https://github.com/Multicolour/multicolour/pull/284) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Rollback async dependency due to conflict with waterline [\#274](https://github.com/Multicolour/multicolour/pull/274) ([molovo](https://github.com/molovo))
 - Update dependencies to enable Greenkeeper 🌴 [\#268](https://github.com/Multicolour/multicolour/pull/268) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Feature/model metadata [\#132](https://github.com/Multicolour/multicolour/pull/132) ([davemackintosh](https://github.com/davemackintosh))

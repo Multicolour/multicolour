@@ -2,7 +2,6 @@
 
 // Get the testing library.
 const tape = require("tape")
-const tape_promise = require("blue-tape")
 
 // Get Multicolour.
 const Multicolour = require("../index.js")
@@ -53,12 +52,16 @@ tape("Multicolour configures itself.", test => {
   test.end()
 })
 
-tape_promise("Multicolour doesn't error when trying to start without scanning.", () => {
+tape("Multicolour doesn't error when trying to start without scanning.", test => {
+  test.plan(1)
+
   // Load from a file.
   const multicolour = Multicolour.new_from_config_file_path(test_content_path + "config.js")
 
-  return multicolour.start()
+  multicolour.start()
     .then(() => multicolour.stop())
+    .then(() => test.pass("Passed"))
+    .catch(error => test.fail(error))
 })
 
 tape("Multicolour can register plugins.", test => {

@@ -47,6 +47,8 @@ tape("Waterline collections are created by Multicolour on instantiation and we o
 
   multicolour.on("database_started", () => {
     test.pass("Received database_started event")
+    test.ok(Object.keys(multicolour.get("database").raw_waterline_joi_models), "Generated Joi schema for base models")
+    test.ok(Object.keys(multicolour.get("database").raw_waterline_joi_models_related), "Generated Joi schema for related models")
   })
 
   multicolour.on("database_stopped", () => {

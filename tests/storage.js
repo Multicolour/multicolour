@@ -24,8 +24,6 @@ tape("Default disk storage adapter.", test => {
   const test_stream = require("fs").createReadStream(`${test_content_path}/circle.svg`)
 
   test.doesNotThrow(() => multicolour.request("storage").upload(test_stream, "circle.svg"), "Uploading of stream.")
-  test.doesNotThrow(() => multicolour.request("storage").upload(test_stream, "circle_abort.svg").abort(), "Abort uploading of stream.")
-  test.equal(multicolour.request("storage").upload(test_stream, "circle_abort.svg").abort().destroyed, true, "Aborted upload stream is destroyed")
   test.doesNotThrow(() => multicolour.request("storage").get("circle.svg"), "Can retrieve file.")
 
   multicolour.stop()

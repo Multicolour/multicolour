@@ -168,12 +168,15 @@ class multicolour extends Map {
   _enable_user_model() {
     // Resolve the blueprint.
     const blueprint = require.resolve("./lib/user-model")
-
-    // Help debuggers.
-    this.debug("User model requested, registering blueprint." + blueprint)
+    const db = this.get("database")
 
     // Push our user model to the array of blueprints.
-    this.get("database").register_new_model(blueprint)
+    if (!db.get("definitions").hasOwnProperty("multicolour_user")) {
+      this.debug("User model requested, no model found by the name 'multicolour_user' so registering core blueprint." + blueprint) // eslint-disable-line
+      db.register_new_model(blueprint)
+    }
+    else
+      this.debug("User model requested but there's already a model registered by the name 'multicolour_user'. Not registering user model") // eslint-disable-line
 
     return this
   }

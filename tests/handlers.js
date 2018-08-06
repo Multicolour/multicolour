@@ -94,6 +94,7 @@ tape("Handlers", test => {
             }
           }
         }}, (err, rows) => {
+          test.ok(!err, "No error in relationship query")
           test.ok(rows.length > 0, "Got results for a relationship query.")
           next()
         }),

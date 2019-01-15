@@ -26,15 +26,17 @@ tape("Handlers", test => {
       const model = models.test
       const handlers = multicolour.get("handlers")
 
+      /*
       const constraints = {user: "payload.user"}
 
       test.doesNotThrow(() => handlers.collection_has_associations(model), "Doesn't throw error while checking for associations on a collection.")
       handlers.compile_constraints({payload: {user: 1}}, constraints)
       test.deepEquals(handlers.compile_constraints({payload: {user: 1}}, constraints), {user: 1}, "Doesn't throw error while compiling constraints")
+    */
 
       const url = {query: {}}
       const payload = {name: "test", age: 12}
-
+      
       Async.series([
         next => handlers.POST(model, {
           payload,
@@ -94,8 +96,8 @@ tape("Handlers", test => {
             }
           }
         }}, (err, rows) => {
-          test.ok(!err, "No error in relationship query")
-          test.ok(rows.length > 0, "Got results for a relationship query.")
+          test.equal(err, null, "No error in relationship query")
+          test.equal(rows.length, 2, "Got results for a relationship query.")
           next()
         }),
         next => handlers.PATCH(model, {payload, params: {id: 1}, url}, err => {

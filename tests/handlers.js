@@ -97,7 +97,7 @@ tape("Handlers", test => {
           }
         }}, (err, rows) => {
           test.equal(err, null, "No error in relationship query")
-          test.equal(rows.length, 2, "Got results for a relationship query.")
+          test.equal(rows.length, 1, "Got results for a relationship query.")
           next()
         }),
         next => handlers.PATCH(model, {payload, params: {id: 1}, url}, err => {

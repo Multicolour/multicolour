@@ -51,7 +51,7 @@
     "replacestream": "^4.0.3",
     "uuid": "^3.1.0",
     "validate-npm-package-name": "^3.0.0",
-    "waterline": "0.12",
+    "waterline": "^0.13.6",
     "waterline-joi": "^1.1.5"
   },
   "engine-strict": true,

@@ -7,7 +7,7 @@ module.exports = {
 
   db: {
     adapters: {
-      memory: require("sails-memory")
+      memory: require("sails-disk")
     },
     connections: {
       development: {

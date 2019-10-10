@@ -7,10 +7,6 @@ module.exports = {
     name: {
       required: true,
       type: "string",
-      metadata: {
-        notes: "Notes on the name of a test thing.",
-        description: "The name is a short string that colloqually identifies a thing from other things."
-      }
     },
     test: {
       type: "string",
@@ -18,12 +14,10 @@ module.exports = {
     },
     age: {
       required: true,
-      type: "integer",
-      min: 0,
-      max: 9000 // OVER 9000!???!!!
+      type: "number",
     },
     empty: "string",
-    order: "order",
+    order: "number",
 
     toJSON: function toJSON() {
       return this.toObject()

@@ -9,11 +9,9 @@ module.exports = new Endpoint({
   },
   age: {
     required: true,
-    type: "integer",
-    min: 0,
-    max: 9000 // OVER 9000!???!!!
+    type: "number",
   },
   test: {
-    model: "test"
+    model: "test2"
   }
 })

@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "multicolour start"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "dependencies": {
+    "joi": "^10.2.2",
+    "multicolour": "^0.6.3",
+    "multicolour-server-hapi": "^1.4.0",
+    "sails-disk": "^1.1.2",
+    "multicolour-hapi-jwt": "^0.2.0"
+  },
+  "multicolour": {
+    "config": "./config",
+    "plugins": [
+      "/content/plugins/default-user",
+      {
+        "as": "server",
+        "name": "multicolour-server-hapi",
+        "plugins": [
+          "multicolour-hapi-jwt"
+        ]
+      }
+    ]
+  },
+  "name": "mc-cli-test",
+  "description": "mc-cli-test"
+}

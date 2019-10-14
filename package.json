@@ -1,6 +1,6 @@
 {
   "name": "multicolour",
-  "version": "0.6.39",
+  "version": "0.7.0",
   "description": "Generate your REST API with JSON and use almost any DB tech.",
   "keywords": [
     "Multicolour",
@@ -52,7 +52,7 @@
     "sails-disk": "^1.1.2",
     "uuid": "^3.1.0",
     "validate-npm-package-name": "^3.0.0",
-    "waterline": "^0.13.6",
+    "waterline": "git+https://github.com/Multicolour/waterline.git",
     "waterline-joi": "^1.1.5"
   },
   "engine-strict": true,

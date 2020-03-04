@@ -50,7 +50,7 @@
     "process-nextick-args": "^2.0.1",
     "replacestream": "^4.0.3",
     "sails-disk": "^1.1.2",
-    "uuid": "^3.3.3",
+    "uuid": "^7.0.2",
     "validate-npm-package-name": "^3.0.0",
     "waterline": "git+https://github.com/Multicolour/waterline.git",
     "waterline-joi": "^1.1.5"

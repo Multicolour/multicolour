@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Multicolour/multicolour#readme",
   "dependencies": {
-    "@hapi/joi": "^16.1.7",
+    "@hapi/joi": "^17.1.1",
     "@newworldcode/talkie": "^1.0.9",
     "async": "^3.1.0",
     "chalk": "^2.4.2",

@@ -36,7 +36,7 @@
     "@hapi/joi": "^16.1.7",
     "@newworldcode/talkie": "^1.0.9",
     "async": "^3.1.0",
-    "chalk": "^2.4.2",
+    "chalk": "^4.0.0",
     "cli-spinner": "^0.2.10",
     "commander": "^3.0.2",
     "cross-spawn": "^7.0.1",

@@ -20,7 +20,9 @@
     "unit-tests": "tape tests/all.js | tap-spec",
     "test": "npm run linter && npm run unit-tests",
     "test-coverage": "istanbul cover tape tests/*.js --recursive --report lcov -x '**/cli/**' -x '**/waterline-fixes/**' | tap-spec",
-    "changelog": "github_changelog_generator -u Multicolour -p multicolour"
+    "changelog": "github_changelog_generator -u Multicolour -p multicolour",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -53,7 +55,8 @@
     "uuid": "^3.3.3",
     "validate-npm-package-name": "^3.0.0",
     "waterline": "git+https://github.com/Multicolour/waterline.git",
-    "waterline-joi": "^1.1.5"
+    "waterline-joi": "^1.1.5",
+    "snyk": "^1.316.1"
   },
   "engine-strict": true,
   "engineStrict": true,
@@ -63,7 +66,7 @@
   "devDependencies": {
     "eslint": "^6.5.1",
     "jest": "^24.9.0",
-    "newman": "^4.5.5",
-    "snyk": "^1.235.1"
-  }
+    "newman": "^4.5.5"
+  },
+  "snyk": true
 }

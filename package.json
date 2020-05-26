@@ -49,7 +49,7 @@
     "pluralize": "^8.0.0",
     "process-nextick-args": "^2.0.1",
     "replacestream": "^4.0.3",
-    "sails-disk": "^1.1.2",
+    "sails-disk": "^2.1.0",
     "uuid": "^3.3.3",
     "validate-npm-package-name": "^3.0.0",
     "waterline": "git+https://github.com/Multicolour/waterline.git",
